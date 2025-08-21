@@ -1,3 +1,49 @@
 {
-  "template": "bolt-vite-react-ts"
+  "appName": "Kerry's Dream Team",
+  "tagline": "AI agents for care homes with a futuristic twist",
+  "brand": {
+    "primary": "#2f6418",
+    "accent": "#e206138",
+    "darkBg": "#0f151a",
+    "lightText": "#ffffff"
+  },
+  "assets": {
+    "defaultUserAvatar": "/user-default.png",
+    "defaultAgentAvatar": "/agent-default.png"
+  },
+  "agents": {
+    "KERRY_FOUNDER": "/Kerry Founder.png",
+    "JEAN_COPYWRITER": "/Jean Copywriter.png",
+    "JACK_MARKETING": "/Jack Social Media Manager.png",
+    "ALEX_DESIGNER": "/Landing page.png",
+    "COLIN_QUIZMASTER": "/Colin Quizmaster.png",
+    "RAY_PHOTO": "/Ray Photographer.png",
+    "SID_SURVEYS": "/Sid Survey Monkey.png",
+    "DORIS_PA": "/Doris PA.png",
+    "MINAL_TRAINER": "/Minal Trainer.png",
+    "BRIAN_HISTORIAN": "/Brian Historian.png",
+    "HELEN_HR": "/Helen HR.png",
+    "VINCE_COMPETITOR": "/Vince Competitor.png",
+    "SUE_MANAGER": "/Sue Care Home Manager.png",
+    "MOLLY_DEMENTIA": "/Molly Dementia Expert .png",
+    "OZZIE_NUTRITION": "/Ozzie Food and Nutrition.png",
+    "RUTH_EMAIL": "/Ruth Email Marketing Manager .png",
+    "GEORGE_SEO": "/George SEO Specialist.png",
+    "FRANK_TECH": "/Frank Tech Guy.png",
+    "BOB_CQC": "/Bob CQC Inspector .png",
+    "JEFF_ENTREPRENEUR": "/Jeff Entrepreneur.png",
+    "ANDREW_COMMISSIONS": "/Andrew Commissions.png",
+    "JIM_FINANCE": "/Jim Finance Manager.png",
+    "VIOLET_BDM": "/Violet Business Development Manager.png"
+  },
+  "features": {
+    "typingIndicator": true,
+    "autoScroll": true,
+    "knowledgeUpload": true
+  },
+  "env": {
+    "supabaseUrlVar": "VITE_SUPABASE_URL",
+    "supabaseAnonKeyVar": "VITE_SUPABASE_ANON_KEY"
+  }
 }
+
