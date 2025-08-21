@@ -12,6 +12,9 @@
     "defaultAgentAvatar": "/agent-default.png"
   },
   "agents": {
+    "DOTTY_LANDING": "/LandingPage.png"
+    "DOTTY_SUPERVISOR: "/Dottysupervisor.png
+    "DAVE_INTERIORS": "/Daveinteriors.png
     "KERRY_FOUNDER": "/Kerryfounder.png",
     "JEAN_COPYWRITER": "/Jeancopywriter.png",
     "JACK_MARKETING": "/Jacksocialmedia.png",
