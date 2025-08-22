@@ -1,3 +1,4 @@
+import { supabase } from './lib/supabase';
 import React, { useMemo, useState } from "react";
 import { useEffect } from "react";
 import { fetchAgents, fetchMessages, fetchTickets, createMessage, updateTicketStatus, type Agent, type Message, type Ticket } from './lib/supabase';
