@@ -721,19 +721,8 @@ const GlobalStyles = () => (
 );
 
 // ---- Icon component (uses DB image if provided; falls back to map) ----
-const Icon = ({
-  label,
-  agentId,
-  imageUrl,      // NEW: comes from DB if available
-  className = "",
-}: {
-  label: string;
-  agentId: string;
-  imageUrl?: string; // NEW
-  className?: string;
-}) => {
-  // Fallback map (in case DB doesn't have the image yet)
-  const imageMap: Record<string, string> = {
+const Icon = ({ label, agentId, imageUrl, className = "" }) => {
+  const fallbackMap = {
     supervisor: '/dottysupervisor.png',
     founder: '/kerryfounder.png',
     dementia: '/mollydementia.png',
@@ -757,10 +746,10 @@ const Icon = ({
     competitor: '/vincecompetitor.png',
     commissioning: '/andrewcommissions.png',
     tech: '/franktech.png',
-    finance: '/jimfinance.png',
+    finance: '/jimfinance.png'
   };
 
-  const src = imageUrl || imageMap[agentId] || '/dottysupervisor.png';
+  const src = imageUrl || fallbackMap[agentId] || '/dottysupervisor.png';
 
   return (
     <img
@@ -768,14 +757,15 @@ const Icon = ({
       alt={label}
       className={className || "message-avatar"}
       style={{
-        width: className?.includes('supervisor') ? '120px' : className?.includes('agent') ? '120px' : '40px',
-        height: className?.includes('supervisor') ? '120px' : className?.includes('agent') ? '120px' : '40px',
+        width: className.includes('supervisor') ? '120px' : className.includes('agent') ? '120px' : '40px',
+        height: className.includes('supervisor') ? '120px' : className.includes('agent') ? '120px' : '40px',
         borderRadius: '50%',
-        objectFit: 'cover',
+        objectFit: 'cover'
       }}
     />
   );
 };
+
 
 
 
