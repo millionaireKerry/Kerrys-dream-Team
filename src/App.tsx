@@ -724,26 +724,32 @@ const GlobalStyles = () => (
 const Icon = ({ label, agentId, className = "" }) => {
   // Map agent IDs to their actual profile images
   const imageMap = {
-    'supervisor': '/Dotty Supervisor copy.png',
-    'founder': '/Kerry Founder.png',
-    'dementia': '/Molly Dementia Expert copy.png',
-    'cqc': '/Bob CQC Inspector copy.png',
-    'manager': '/Sue Care Home Manager copy.png',
-    'activities': '/Nadia Activities Coordinator copy.png',
-    'designer': '/Dave Interior Designer copy.png',
-    'social': '/Jack Social Media Manager copy.png',
-    'copy': '/Jean Copywriter copy.png',
-    'bdm': '/Violet Business Development Manager copy.png',
-    'entre': '/Jeff Entrepreneur copy.png',
-    'email': '/Ruth Email Marketing Manager copy.png',
-    'seo': '/George SEO Specialist copy.png',
-    'va': '/Jim Virtual Assistant copy.png',
-    'chef': '/Ozzie Food and Nutrition copy.png',
-    'competitor': '/Vince Competitor copy.png',
-    'commissioning': '/Andrew Commissions.png',
-    'tech': '/Frank Tech Guy.png',
-    'finance': '/Jim Finance Manager.png'
-  };
+  'supervisor': '/dottysupervisor.png',
+  'founder': '/kerryfounder.png',
+  'dementia': '/mollydementia.png',
+  'cqc': '/bobcqc.png',
+  'manager': '/suecarehomemanager.png',
+  'activities': '/nadiaactivities.png',
+  'designer': '/daveinteriors.png',
+  'alex': '/alexdesigner.png',
+  'colin': '/colinquizmaster.png',
+  'brian': '/brianhistorian.png',
+  'doris': '/dorispa.png',
+  'minal': '/minaltrainer.png',
+  'sid': '/sidsurveymonkey.png',
+  'social': '/jacksocialmediamanager.png',
+  'copy': '/jeancopywriter.png',
+  'bdm': '/violetbusinessdevelopment.png',
+  'entre': '/jeffentrepreneur.png',
+  'email': '/ruthemailmarketing.png',
+  'seo': '/georgeseo.png',
+  'chef': '/ozziechef.png',
+  'competitor': '/vincecompetitor.png',
+  'commissioning': '/andrewcommissions.png',
+  'tech': '/franktech.png',
+  'finance': '/jimfinance.png'
+};
+
   
   const imageUrl = imageMap[agentId] || '/Dotty Supervisor copy.png';
   
