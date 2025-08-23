@@ -1122,73 +1122,125 @@ export default function DreamTeamApp() {
     setRouteTo(agentId);
     setCurrentScreen('chat');
     
-    // Clear previous messages and initialize with selected agent
-    const agent = agents.find(a => a.id === agentId);
-    if (agent) {
-      // Create personalized greeting based on agent
-      let greeting = '';
-      switch (agentId) {
-        case 'founder':
-          greeting = `Hello! I'm Kerry, the founder of this amazing care home concept. I'm passionate about revolutionizing elderly care and would love to help you with any questions about our vision, strategy, or business development. How can I assist you today?`;
-          break;
-        case 'supervisor':
-          greeting = `Hello there! I'm Dotty, your friendly supervisor. I've been managing care teams for decades and I'm here to help coordinate your requests with the right team members. What can I help you with today?`;
-          break;
-        case 'dementia':
-          greeting = `Hello! I'm Molly, your dementia care specialist. I have extensive experience in creating supportive environments for residents with dementia and their families. How can I help you today?`;
-          break;
-        case 'cqc':
-          greeting = `Good day! I'm Bob, your CQC compliance expert. I'll help ensure everything meets regulatory standards and best practices. What compliance or quality matters can I assist you with?`;
-          break;
-        case 'manager':
-          greeting = `Hello! I'm Sue, your care home manager. I oversee daily operations and staff management. How can I help you improve your care home operations today?`;
-          break;
-        case 'activities':
-          greeting = `Hi there! I'm Nadia, your activities coordinator. I specialize in creating engaging, meaningful activities for residents. What kind of programming can I help you develop?`;
-          break;
-        case 'designer':
-          greeting = `Hello! I'm Dave, your interior design specialist. I create beautiful, functional spaces that feel like home for residents. How can I help with your design needs?`;
-          break;
-        case 'social':
-          greeting = `Hey! I'm Jack, your social media manager. I'll help you connect with families and the community through engaging digital content. What's your social media goal?`;
-          break;
-        case 'copy':
-          greeting = `Hello! I'm Jean, your copywriter. I craft compelling content that tells your care home's story. What writing project can I help you with today?`;
-          break;
-        case 'bdm':
-          greeting = `Hello! I'm Violet, your business development manager. I focus on growth strategies and building partnerships. How can I help expand your reach?`;
-          break;
-        case 'entre':
-          greeting = `Hi! I'm Jeff, your entrepreneurial advisor. I help with innovative business solutions and strategic thinking. What challenge can we tackle together?`;
-          break;
-        case 'email':
-          greeting = `Hello! I'm Ruth, your email marketing specialist. I create campaigns that keep families informed and engaged. What email strategy can I develop for you?`;
-          break;
-        case 'seo':
-          greeting = `Hello! I'm George, your SEO specialist. I help people find your care home online when they need it most. How can I improve your digital visibility?`;
-          break;
-        case 'va':
-          greeting = `Hello! I'm Jim, your virtual assistant. I handle administrative tasks so you can focus on care. What can I organize or manage for you today?`;
-          break;
-        case 'chef':
-          greeting = `Hello! I'm Ozzie, your food and nutrition expert. I create delicious, healthy meals that residents love. How can I help with your dining program?`;
-          break;
-        case 'competitor':
-          greeting = `Hello! I'm Vince, your competitive intelligence analyst. I keep track of what others are doing so you can stay ahead. What market insights do you need?`;
-          break;
-        case 'commissioning':
-          greeting = `Hello! I'm Andrew, your commissioning specialist. I help secure contracts and build relationships with local authorities. How can I support your commissioning goals?`;
-          break;
-        case 'tech':
-          greeting = `Hello! I'm Frank, your tech specialist. I handle all the digital systems that keep your care home running smoothly. What technical challenge can I solve?`;
-          break;
-        case 'finance':
-          greeting = `Hello! I'm Jim, your finance manager. I help with budgets, costs, and financial planning to keep your care home profitable and sustainable. How can I help with your finances?`;
-          break;
-        default:
-          greeting = `Hello! I'm ${agent.name}, your ${agent.role.toLowerCase()}. How can I help you today?`;
-      }
-      
+   // Create personalized greeting based on agent
+let greeting = '';
+switch (agentId) {
+  case 'founder':
+    greeting = `Hello! I'm Kerry, the founder of this amazing care home concept. I'm passionate about revolutionizing elderly care and would love to help you with any questions about our vision, strategy, or business development. How can I assist you today?`;
+    break;
+
+  case 'supervisor':
+    greeting = `Hello there! I'm Dotty, your friendly supervisor. I've been managing care teams for decades and I'm here to help coordinate your requests with the right team members. What can I help you with today?`;
+    break;
+
+  case 'dementia':
+    greeting = `Hello! I'm Molly, your dementia care specialist. I have extensive experience in creating supportive environments for residents with dementia and their families. How can I help you today?`;
+    break;
+
+  case 'cqc':
+    greeting = `Good day! I'm Bob, your CQC compliance expert. I'll help ensure everything meets regulatory standards and best practices. What compliance or quality matters can I assist you with?`;
+    break;
+
+  case 'manager':
+    greeting = `Hello! I'm Sue, your care home manager. I oversee daily operations and staff management. How can I help you improve your care home operations today?`;
+    break;
+
+  case 'activities':
+    greeting = `Hi there! I'm Nadia, your activities coordinator. I specialize in creating engaging, meaningful activities for residents. What kind of programming can I help you develop?`;
+    break;
+
+  // NEW — Alex (Designer)
+  case 'alex':
+  case 'alexdesigner':
+  case 'designer_alex':
+    greeting = `Hello! I'm Alex, your designer. I focus on layouts, signage, and visual identity that help residents feel at home. What would you like to design or refresh today?`;
+    break;
+
+  // Existing — Dave (Interior Designer)
+  case 'designer':
+    greeting = `Hello! I'm Dave, your interior design specialist. I create beautiful, functional spaces that feel like home for residents. How can I help with your design needs?`;
+    break;
+
+  // NEW — Colin (Quizmaster / Engagement)
+  case 'colin':
+  case 'quizmaster':
+    greeting = `Hi! I'm Colin, your quizmaster and engagement lead. I build lively activities that spark conversation and joy. Fancy a quiz pack or an activity plan?`;
+    break;
+
+  // NEW — Brian (Historian / Reminiscence)
+  case 'brian':
+  case 'historian':
+    greeting = `Hello! I'm Brian, your social historian. I create reminiscence materials and local-history themes that residents love. What era or topic should we explore?`;
+    break;
+
+  // NEW — Doris (PA / Admin Support)
+  case 'doris':
+  case 'pa':
+    greeting = `Hello dear! I'm Doris, your PA. I’m here to tidy tasks, format documents, and keep everything shipshape. What would you like me to organise today?`;
+    break;
+
+  // NEW — Minal (Trainer)
+  case 'minal':
+  case 'trainer':
+    greeting = `Hello! I'm Minal, your training lead. I build bite-sized training, inductions, and competency checklists. What would you like your team trained on?`;
+    break;
+
+  // NEW — Sid (Survey Monkey / Surveys)
+  case 'sid':
+  case 'surveys':
+    greeting = `Hi! I'm Sid, your surveys guy. I create family, resident, and staff surveys — and turn results into clear actions. What survey do you need right now?`;
+    break;
+
+  case 'social':
+    greeting = `Hey! I'm Jack, your social media manager. I'll help you connect with families and the community through engaging digital content. What's your social media goal?`;
+    break;
+
+  case 'copy':
+    greeting = `Hello! I'm Jean, your copywriter. I craft compelling content that tells your care home's story. What writing project can I help you with today?`;
+    break;
+
+  case 'bdm':
+    greeting = `Hello! I'm Violet, your business development manager. I focus on growth strategies and building partnerships. How can I help expand your reach?`;
+    break;
+
+  case 'entre':
+    greeting = `Hi! I'm Jeff, your entrepreneurial advisor. I help with innovative business solutions and strategic thinking. What challenge can we tackle together?`;
+    break;
+
+  case 'email':
+    greeting = `Hello! I'm Ruth, your email marketing specialist. I create campaigns that keep families informed and engaged. What email strategy can I develop for you?`;
+    break;
+
+  case 'seo':
+    greeting = `Hello! I'm George, your SEO specialist. I help people find your care home online when they need it most. How can I improve your digital visibility?`;
+    break;
+
+  case 'chef':
+    greeting = `Hello! I'm Ozzie, your food and nutrition expert. I create delicious, healthy meals that residents love. How can I help with your dining program?`;
+    break;
+
+  case 'competitor':
+    greeting = `Hello! I'm Vince, your competitive intelligence analyst. I keep track of what others are doing so you can stay ahead. What market insights do you need?`;
+    break;
+
+  case 'commissioning':
+    greeting = `Hello! I'm Andrew, your commissioning specialist. I help secure contracts and build relationships with local authorities. How can I support your commissioning goals?`;
+    break;
+
+  case 'tech':
+    greeting = `Hello! I'm Frank, your tech specialist. I handle all the digital systems that keep your care home running smoothly. What technical challenge can I solve?`;
+    break;
+
+  case 'finance':
+    greeting = `Hello! I'm Jim, your finance manager. I help with budgets, costs, and financial planning to keep your care home profitable and sustainable. How can I help with your finances?`;
+    break;
+
+  default: {
+    const a = agents.find(a => a.id === agentId);
+    greeting = `Hello! I'm ${a?.name ?? 'your assistant'}, your ${a?.role?.toLowerCase() ?? 'agent'}. How can I help you today?`;
+  }
+}
+
       setMessages([{
         id: 'initial-' + Date.now(),
         role: 'agent',
