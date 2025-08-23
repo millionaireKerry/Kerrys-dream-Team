@@ -33,7 +33,7 @@ const FontLinks = () => (
 const GlobalStyles = () => (
   <style>{`
     :root{
-      --mint:#7AC7B8;       /* Primary accent */
+      --olive:#2f6418;       /* Primary accent */
       --dark:#000000;       /* Pure black background */
       --card:#111111;       /* Card backgrounds */
       --border:#333333;     /* Borders */
@@ -84,7 +84,7 @@ const GlobalStyles = () => (
       min-height: 100vh;
       background: 
         linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0.4) 100%),
-        url('/Landing page.png');
+        url('/Landingpage.png');
       background-size: auto, cover;
       background-position: center, right center;
       background-repeat: no-repeat, no-repeat;
