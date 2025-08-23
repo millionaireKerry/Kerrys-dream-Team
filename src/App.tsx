@@ -1,7 +1,15 @@
-import { supabase } from './lib/supabase';
 import React, { useState, useMemo, useEffect } from 'react';
-import { useEffect } from "react";
-import { fetchAgents, fetchMessages, fetchTickets, createMessage, updateTicketStatus, type Agent, type Message, type Ticket } from './lib/supabase';
+import {
+  supabase,
+  fetchAgents,
+  fetchMessages,
+  fetchTickets,
+  createMessage,
+  updateTicketStatus,
+  type Agent,
+  type Message,
+  type Ticket
+} from './lib/supabase';
 import { KnowledgeUpload } from './components/KnowledgeUpload';
 
 // ==========================
