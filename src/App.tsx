@@ -720,39 +720,38 @@ const GlobalStyles = () => (
   `}</style>
 );
 
-// ---- Icon component with placeholder images ----
+// ---- Icon component with profile images ----
 const Icon = ({ label, agentId, className = "" }) => {
   // Map agent IDs to their actual profile images
   const imageMap = {
-  'supervisor': '/dottysupervisor.png',
-  'founder': '/kerryfounder.png',
-  'dementia': '/mollydementia.png',
-  'cqc': '/bobcqc.png',
-  'manager': '/suecarehomemanager.png',
-  'activities': '/nadiaactivities.png',
-  'designer': '/daveinteriors.png',
-  'alex': '/alexdesigner.png',
-  'colin': '/colinquizmaster.png',
-  'brian': '/brianhistorian.png',
-  'doris': '/dorispa.png',
-  'minal': '/minaltrainer.png',
-  'sid': '/sidsurveymonkey.png',
-  'social': '/jacksocialmediamanager.png',
-  'copy': '/jeancopywriter.png',
-  'bdm': '/violetbusinessdevelopment.png',
-  'entre': '/jeffentrepreneur.png',
-  'email': '/ruthemailmarketing.png',
-  'seo': '/georgeseo.png',
-  'chef': '/ozziechef.png',
-  'competitor': '/vincecompetitor.png',
-  'commissioning': '/andrewcommissions.png',
-  'tech': '/franktech.png',
-  'finance': '/jimfinance.png'
-};
+    supervisor: '/dottysupervisor.png',
+    founder: '/kerryfounder.png',
+    dementia: '/mollydementia.png',
+    cqc: '/bobcqc.png',
+    manager: '/suecarehomemanager.png',
+    activities: '/nadiaactivities.png',
+    designer: '/daveinteriors.png',
+    alex: '/alexdesigner.png',
+    colin: '/colinquizmaster.png',
+    brian: '/brianhistorian.png',
+    doris: '/dorispa.png',
+    minal: '/minaltrainer.png',
+    sid: '/sidsurveymonkey.png',
+    social: '/jacksocialmediamanager.png',
+    copy: '/jeancopywriter.png',
+    bdm: '/violetbusinessdevelopment.png',
+    entre: '/jeffentrepreneur.png',
+    email: '/ruthemailmarketing.png',
+    seo: '/georgeseo.png',
+    chef: '/ozziechef.png',
+    competitor: '/vincecompetitor.png',
+    commissioning: '/andrewcommissions.png',
+    tech: '/franktech.png',
+    finance: '/jimfinance.png'
+  };
 
-  
-  const imageUrl = imageMap[agentId] || '/Dotty Supervisor copy.png';
-  
+  const imageUrl = imageMap[agentId] || '/dottysupervisor.png';
+
   return (
     <img 
       src={imageUrl} 
@@ -767,6 +766,7 @@ const Icon = ({ label, agentId, className = "" }) => {
     />
   );
 };
+
 
 // ---- Landing Page Component ----
 const LandingPage = ({ onEnter }: { onEnter: () => void }) => (
