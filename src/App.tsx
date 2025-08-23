@@ -720,10 +720,20 @@ const GlobalStyles = () => (
   `}</style>
 );
 
-// ---- Icon component with profile images ----
-const Icon = ({ label, agentId, className = "" }) => {
-  // Map agent IDs to their actual profile images
-  const imageMap = {
+// ---- Icon component (uses DB image if provided; falls back to map) ----
+const Icon = ({
+  label,
+  agentId,
+  imageUrl,      // NEW: comes from DB if available
+  className = "",
+}: {
+  label: string;
+  agentId: string;
+  imageUrl?: string; // NEW
+  className?: string;
+}) => {
+  // Fallback map (in case DB doesn't have the image yet)
+  const imageMap: Record<string, string> = {
     supervisor: '/dottysupervisor.png',
     founder: '/kerryfounder.png',
     dementia: '/mollydementia.png',
@@ -747,25 +757,26 @@ const Icon = ({ label, agentId, className = "" }) => {
     competitor: '/vincecompetitor.png',
     commissioning: '/andrewcommissions.png',
     tech: '/franktech.png',
-    finance: '/jimfinance.png'
+    finance: '/jimfinance.png',
   };
 
-  const imageUrl = imageMap[agentId] || '/dottysupervisor.png';
+  const src = imageUrl || imageMap[agentId] || '/dottysupervisor.png';
 
   return (
-    <img 
-      src={imageUrl} 
-      alt={label} 
+    <img
+      src={src}
+      alt={label}
       className={className || "message-avatar"}
       style={{
-        width: className.includes('supervisor') ? '120px' : className.includes('agent') ? '120px' : '40px',
-        height: className.includes('supervisor') ? '120px' : className.includes('agent') ? '120px' : '40px',
+        width: className?.includes('supervisor') ? '120px' : className?.includes('agent') ? '120px' : '40px',
+        height: className?.includes('supervisor') ? '120px' : className?.includes('agent') ? '120px' : '40px',
         borderRadius: '50%',
-        objectFit: 'cover'
+        objectFit: 'cover',
       }}
     />
   );
 };
+
 
 
 // ---- Landing Page Component ----
